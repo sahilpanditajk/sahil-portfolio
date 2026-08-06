@@ -1,0 +1,10 @@
+{
+  "name": "Sahil Pandita",
+  "short_name": "Sahil",
+  "description": "Official portfolio of Sahil Pandita - Journalist, News Anchor & Reporter",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#10151c",
+  "theme_color": "#10151c",
+  "icons": []
+}
