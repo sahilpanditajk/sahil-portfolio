@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahil Pandita — Journalist, Anchor &amp; Reporter | Jammu &amp; Kashmir</title>
+<meta name="description" content="Sahil Pandita — News Desk Reporter &amp; Anchor covering politics, defense, sports and regional affairs across Jammu &amp; Kashmir. Reporting, editing, anchoring.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10151c;
+    --ink-soft:#1a2230;
+    --ink-line: rgba(237,237,234,0.12);
+    --paper:#dde3e2;
+    --paper-line: rgba(16,21,28,0.14);
+    --tally:#e0432c;
+    --tally-glow: rgba(224,67,44,0.55);
+    --gold:#d7a94a;
+    --text-light:#ededea;
+    --text-light-dim:#9aa2ae;
+    --text-dark:#14171c;
+    --text-dark-dim:#4b5158;
+    --serif:'Fraunces', serif;
+    --sans:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    background:var(--ink);
+    color:var(--text-light);
+    font-family:var(--sans);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Ticker ---------- */
+  .ticker-bar{
+    background:var(--tally);
+    color:#fff;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.06em;
+    overflow:hidden;
+    white-space:nowrap;
+    padding:6px 0;
+    position:relative;
+    z-index:60;
+  }
+  .ticker-track{
+    display:inline-block;
+    padding-left:100%;
+    animation:ticker 32s linear infinite;
+  }
+  .ticker-track span{margin-right:48px;}
+  .ticker-track span::before{content:"● ";}
+  @keyframes ticker{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-100%);}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0;
+    background:rgba(16,21,28,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--ink-line);
+    z-index:50;
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:0.01em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .avatar-sm{
+    width:32px; height:32px; border-radius:50%; object-fit:cover;
+    border:1px solid var(--ink-line);
+  }
+  .avatar-lg{
+    width:100%; max-width:280px; aspect-ratio:1/1; object-fit:cover;
+    border-radius:4px; border:1px solid var(--ink-line);
+    filter:grayscale(15%);
+  }
+  .on-air{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:var(--mono); font-size:10px; letter-spacing:0.14em;
+    color:var(--tally);
+    border:1px solid var(--tally);
+    padding:3px 8px 3px 6px;
+    border-radius:2px;
+  }
+  .on-air .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--tally);
+    box-shadow:0 0 0 0 var(--tally-glow);
+    animation:pulse 1.8s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 var(--tally-glow);}
+    70%{box-shadow:0 0 0 8px rgba(224,67,44,0);}
+    100%{box-shadow:0 0 0 0 rgba(224,67,44,0);}
+  }
+  nav ul{
+    list-style:none; display:flex; gap:28px;
+  }
+  nav a{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em;
+    text-transform:uppercase; text-decoration:none;
+    color:var(--text-light-dim);
+    transition:color 0.2s;
+  }
+  nav a:hover{color:var(--tally);}
+  .nav-toggle{display:none; background:none;border:1px solid var(--ink-line); color:var(--text-light); font-size:14px; padding:6px 10px; border-radius:2px; cursor:pointer; font-family:var(--mono);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:100px 0 90px;
+    position:relative;
+    border-bottom:1px solid var(--ink-line);
+  }
+  .dateline{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.14em;
+    color:var(--gold); text-transform:uppercase;
+    margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .dateline::before{content:"—"; color:var(--tally);}
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(42px, 8vw, 84px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    max-width:11ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--gold);
+  }
+  .hero .role{
+    margin-top:22px;
+    font-family:var(--mono);
+    font-size:14px; letter-spacing:0.06em;
+    color:var(--text-light-dim);
+    text-transform:uppercase;
+  }
+  .hero p.lede{
+    margin-top:26px;
+    max-width:640px;
+    font-size:18px;
+    color:#c9cdd3;
+  }
+  .hero .cta-row{
+    display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:14px 24px;
+    border-radius:2px;
+    text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform 0.15s, background 0.15s, color 0.15s;
+  }
+  .btn-primary{background:var(--tally); color:#fff;}
+  .btn-primary:hover{transform:translateY(-2px); background:#c8351f;}
+  .btn-ghost{border:1px solid var(--ink-line); color:var(--text-light);}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px);}
+
+  /* ---------- Section shared ---------- */
+  section{padding:86px 0;}
+  .section-label{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--tally);
+    margin-bottom:14px;
+  }
+  h2.section-title{
+    font-family:var(--serif); font-weight:600;
+    font-size:clamp(28px,4vw,40px);
+    max-width:16ch;
+    margin-bottom:16px;
+  }
+  .section-sub{color:var(--text-light-dim); max-width:60ch; font-size:16px;}
+
+  /* ---------- About ---------- */
+  .about{border-bottom:1px solid var(--ink-line);}
+  .about-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; margin-top:44px;
+  }
+  .about-copy p{margin-bottom:18px; color:#c9cdd3; font-size:16px;}
+  .credentials{
+    background:var(--ink-soft);
+    border:1px solid var(--ink-line);
+    padding:28px;
+    border-radius:4px;
+    font-family:var(--mono);
+    font-size:13px;
+  }
+  .credentials h3{
+    font-family:var(--sans); font-weight:600; font-size:15px;
+    margin-bottom:16px; color:var(--text-light);
+    text-transform:none; letter-spacing:0;
+  }
+  .cred-row{
+    display:flex; justify-content:space-between; gap:16px;
+    padding:10px 0; border-top:1px solid var(--ink-line);
+    color:var(--text-light-dim);
+  }
+  .cred-row:first-of-type{border-top:none;}
+  .cred-row b{color:var(--text-light); font-weight:500; text-align:right;}
+
+  /* ---------- Beats ---------- */
+  .beats{background:var(--ink-soft); border-bottom:1px solid var(--ink-line);}
+  .beat-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    margin-top:44px;
+    background:var(--ink-line);
+    border:1px solid var(--ink-line);
+  }
+  .beat-card{
+    background:var(--ink-soft);
+    padding:30px 26px;
+    transition:background 0.2s;
+  }
+  .beat-card:hover{background:#212b3c;}
+  .beat-tag{
+    font-family:var(--mono); font-size:11px; color:var(--gold);
+    letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; display:block;
+  }
+  .beat-card h4{font-family:var(--serif); font-weight:600; font-size:20px; margin-bottom:8px;}
+  .beat-card p{font-size:14px; color:var(--text-light-dim);}
+
+  /* ---------- Articles ---------- */
+  .article-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:28px; margin-top:48px;
+  }
+  .article-card{
+    background:var(--paper); color:var(--text-dark);
+    border-radius:3px; padding:30px;
+    display:flex; flex-direction:column; gap:14px;
+    text-decoration:none;
+    border:1px solid var(--paper-line);
+    transition:transform 0.18s, box-shadow 0.18s;
+  }
+  .article-card:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(0,0,0,0.35);}
+  .article-meta{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--text-dark-dim);
+    display:flex; gap:10px; align-items:center;
+  }
+  .article-meta .beat-pill{
+    background:var(--tally); color:#fff; padding:2px 8px; border-radius:20px;
+    font-size:10px;
+  }
+  .article-card h3{font-family:var(--serif); font-size:23px; font-weight:600; line-height:1.2;}
+  .article-card .dek{font-size:14.5px; color:var(--text-dark-dim);}
+  .article-card .read-more{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.05em;
+    margin-top:auto; color:var(--tally); font-weight:600;
+  }
+  .article-card.placeholder{
+    border:1px dashed var(--paper-line); opacity:0.7;
+  }
+  .articles-note{
+    margin-top:28px; font-family:var(--mono); font-size:12px; color:var(--text-light-dim);
+    border-left:2px solid var(--gold); padding-left:14px;
+  }
+
+  /* ---------- On-air ---------- */
+  .onair{background:var(--ink-soft); border-top:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line);}
+  .onair-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-top:20px;}
+  .bulletin-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:48px;
+  }
+  .bulletin-card{
+    text-decoration:none; color:var(--text-light);
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .bulletin-thumb{
+    position:relative; aspect-ratio:16/9; border-radius:4px; overflow:hidden;
+    border:1px solid var(--ink-line); background:var(--ink);
+  }
+  .bulletin-thumb img{width:100%; height:100%; object-fit:cover; transition:transform 0.3s;}
+  .bulletin-card:hover .bulletin-thumb img{transform:scale(1.06);}
+  .play-badge{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  }
+  .play-badge span{
+    width:44px; height:44px; border-radius:50%; background:rgba(224,67,44,0.9);
+    display:flex; align-items:center; justify-content:center; color:#fff; font-size:14px;
+  }
+  .bulletin-label{
+    font-family:var(--mono); font-size:12px; color:var(--text-light-dim); letter-spacing:0.04em;
+  }
+  .reel-frame{
+    aspect-ratio:16/10; background:var(--ink);
+    border:1px solid var(--ink-line); border-radius:4px;
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:14px;
+    position:relative; overflow:hidden;
+  }
+  .reel-frame::before{
+    content:""; position:absolute; inset:0;
+    background:repeating-linear-gradient(180deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 4px);
+  }
+  .reel-tally{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--tally);
+    display:flex; align-items:center; gap:8px;
+  }
+  .reel-frame p{font-family:var(--mono); font-size:13px; color:var(--text-light-dim); text-align:center; max-width:80%;}
+
+  /* ---------- Timeline ---------- */
+  .timeline{border-bottom:1px solid var(--ink-line);}
+  .tl-item{
+    display:grid; grid-template-columns:160px 1fr; gap:32px;
+    padding:26px 0; border-top:1px solid var(--ink-line);
+  }
+  .tl-item:first-of-type{border-top:none;}
+  .tl-date{font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.05em;}
+  .tl-role h4{font-family:var(--serif); font-size:20px; font-weight:600; margin-bottom:4px;}
+  .tl-org{font-family:var(--mono); font-size:12px; color:var(--text-light-dim); margin-bottom:10px; display:block;}
+  .tl-role p{font-size:14.5px; color:#c9cdd3;}
+
+  /* ---------- Skills ---------- */
+  .skills{background:var(--ink-soft);}
+  .skill-cloud{display:flex; flex-wrap:wrap; gap:10px; margin-top:32px;}
+  .skill-chip{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.03em;
+    border:1px solid var(--ink-line); padding:8px 14px; border-radius:20px;
+    color:var(--text-light-dim);
+  }
+  .lang-row{display:flex; gap:32px; margin-top:36px; flex-wrap:wrap;}
+  .lang-item{font-family:var(--mono); font-size:13px;}
+  .lang-item b{color:var(--gold); display:block; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:44px;}
+  .contact-info a{
+    display:flex; align-items:center; gap:12px;
+    font-family:var(--mono); font-size:14px;
+    padding:14px 0; border-top:1px solid var(--ink-line);
+    text-decoration:none; color:var(--text-light);
+    transition:color 0.2s;
+  }
+  .contact-info a:first-child{border-top:none;}
+  .contact-info a:hover{color:var(--tally);}
+  form.msg-form{display:flex; flex-direction:column; gap:14px;}
+  .msg-form input, .msg-form textarea{
+    background:var(--ink-soft); border:1px solid var(--ink-line); color:var(--text-light);
+    font-family:var(--sans); font-size:14px; padding:14px; border-radius:2px;
+    resize:vertical;
+  }
+  .msg-form input:focus, .msg-form textarea:focus{outline:2px solid var(--gold); outline-offset:1px;}
+  .msg-form textarea{min-height:120px;}
+  .msg-form button{
+    align-self:flex-start;
+    background:var(--tally); color:#fff; border:none;
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:14px 26px; border-radius:2px; cursor:pointer;
+    transition:background 0.2s, transform 0.15s;
+  }
+  .msg-form button:hover{background:#c8351f; transform:translateY(-2px);}
+
+  footer{
+    padding:36px 0; border-top:1px solid var(--ink-line);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  }
+  footer .brand{font-size:16px;}
+  footer .foot-links{display:flex; gap:20px; font-family:var(--mono); font-size:12px; color:var(--text-light-dim);}
+  footer .foot-links a{text-decoration:none; transition:color 0.2s;}
+  footer .foot-links a:hover{color:var(--tally);}
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+
+  @media (max-width: 860px){
+    .about-grid, .onair-grid, .contact-grid{grid-template-columns:1fr;}
+    .beat-grid{grid-template-columns:1fr;}
+    .article-grid{grid-template-columns:1fr;}
+    nav{
+      position:fixed; top:0; right:-100%; height:100vh; width:78%; max-width:320px;
+      background:var(--ink-soft); border-left:1px solid var(--ink-line);
+      transition:right 0.25s ease; padding:90px 28px; z-index:55;
+    }
+    nav.open{right:0;}
+    nav ul{flex-direction:column; gap:24px;}
+    .nav-toggle{display:block;}
+    .tl-item{grid-template-columns:1fr; gap:6px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span>TAKE ONE DIGITAL NETWORK — NEWS DESK REPORTER &amp; ANCHOR, JAMMU &amp; KASHMIR</span>
+    <span>DOORDARSHAN KENDRA JAMMU — REGIONAL NEWS UNIT, RESOURCE PERSON</span>
+    <span>FORMERLY DAILY EXCELSIOR — J&amp;K'S LEADING ENGLISH DAILY</span>
+    <span>COVERING POLITICS · GOVERNANCE · DEFENSE · SPORTS · REGIONAL AFFAIRS</span>
+  </div>
+</div>
+
+<header>
+  <div class="nav-row wrap">
+    <div class="brand"><img src="assets/sahil-pandita.jpg" alt="Sahil Pandita" class="avatar-sm"> Sahil Pandita <span class="on-air"><span class="dot"></span>On Air</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">MENU</button>
+    <nav id="siteNav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#beats">Beats</a></li>
+        <li><a href="#articles">Reporting</a></li>
+        <li><a href="#onair">On-Air</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="dateline">Jammu, J&amp;K — Filed Daily</div>
+    <h1>Stories from the ground, <em>told straight.</em></h1>
+    <div class="role">Journalist · News Desk Reporter · Anchor</div>
+    <p class="lede">I report, write and anchor news across print, digital and broadcast in Jammu &amp; Kashmir — from assembly corridors to cricket grounds — with one rule: get it right before you get it out.</p>
+    <div class="cta-row">
+      <a href="#articles" class="btn btn-primary">Read the reporting →</a>
+      <a href="#onair" class="btn btn-ghost">Watch the anchor reel</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-label">Byline</div>
+    <h2 class="section-title">Cross-platform journalist, trained on deadline.</h2>
+    <div class="about-grid">
+      <div class="about-copy">
+        <img src="assets/sahil-pandita.jpg" alt="Sahil Pandita, journalist and anchor" class="avatar-lg" style="margin-bottom:24px;">
+        <p>I currently work as a News Desk Reporter &amp; Anchor at Take One Digital Network, one of J&amp;K's prominent news and media platforms, where I research, write, edit and present news across web, bulletin and social formats. Alongside this, I serve as an empanelled Resource Person with Doordarshan Kendra Jammu's Regional News Unit, writing and structuring broadcast-standard bulletins for Doordarshan.</p>
+        <p>My editorial training began at Daily Excelsior, J&amp;K's leading English daily, where I proofread and wrote news pages, features and bylined articles under strict print deadlines — including pieces on National Parents' Day and the Kargil War Anniversary.</p>
+        <p>I'm currently pursuing an M.A. in Journalism &amp; Digital Media at IGNOU, building on a B.C.A. from Cluster University and an Advanced Diploma in Computer Applications — a technical foundation I now put to work in digital publishing, SEO and newsroom tools.</p>
+      </div>
+      <div class="credentials">
+        <h3>At a glance</h3>
+        <div class="cred-row"><span>Based in</span><b>Jammu, J&amp;K, India</b></div>
+        <div class="cred-row"><span>Current role</span><b>News Desk Reporter &amp; Anchor, Take One Digital Network</b></div>
+        <div class="cred-row"><span>Also</span><b>Resource Person, DDK Jammu (RNU)</b></div>
+        <div class="cred-row"><span>Prior</span><b>Proofreader &amp; Writer, Daily Excelsior</b></div>
+        <div class="cred-row"><span>Studying</span><b>M.A. Journalism &amp; Digital Media, IGNOU</b></div>
+        <div class="cred-row"><span>Degree</span><b>B.C.A., Cluster University Jammu</b></div>
+        <div class="cred-row"><span>Certified in</span><b>Digital Journalism (Reuters)</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="beats" id="beats">
+  <div class="wrap">
+    <div class="section-label">Coverage</div>
+    <h2 class="section-title">Beats I report on</h2>
+    <p class="section-sub">The subjects I return to across print, digital and broadcast — where I've built sourcing and context over time.</p>
+    <div class="beat-grid">
+      <div class="beat-card"><span class="beat-tag">Beat 01</span><h4>Politics &amp; Governance</h4><p>J&amp;K administration, policy and civic affairs, filed for print and digital.</p></div>
+      <div class="beat-card"><span class="beat-tag">Beat 02</span><h4>Defense &amp; Security</h4><p>Regional security developments, including anniversary and remembrance reporting.</p></div>
+      <div class="beat-card"><span class="beat-tag">Beat 03</span><h4>Regional Affairs — J&amp;K</h4><p>News from across Jammu, Kashmir and Ladakh, for a local and national audience.</p></div>
+      <div class="beat-card"><span class="beat-tag">Beat 04</span><h4>Sports &amp; Cricket</h4><p>Match coverage and sports news, written for fast-moving digital and social formats.</p></div>
+      <div class="beat-card"><span class="beat-tag">Beat 05</span><h4>Education</h4><p>Policy, institutions and student-facing stories from the region.</p></div>
+      <div class="beat-card"><span class="beat-tag">Beat 06</span><h4>Telecom &amp; Digital</h4><p>Connectivity, technology and digital-access stories affecting J&amp;K.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="articles" id="articles">
+  <div class="wrap">
+    <div class="section-label">Reporting</div>
+    <h2 class="section-title">Latest &amp; selected reporting</h2>
+    <p class="section-sub">A running file of published work. Replace the placeholder cards below with new pieces as they go live.</p>
+    <div class="article-grid">
+      <a href="articles/national-parents-day.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Print · Daily Excelsior</span><span>National Parents' Day</span></div>
+        <h3>Let's take a pledge for our parents</h3>
+        <p class="dek">On the growing trend of old-age homes, the decline of respect for parents, and how to rebuild the bond — written for Daily Excelsior.</p>
+        <span class="read-more">Read piece →</span>
+      </a>
+      <a href="articles/kargil-war-anniversary.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Tribute · Vijay Diwas</span><span>Kargil War Anniversary</span></div>
+        <h3>Remembering Kargil: the heroes who held the line</h3>
+        <p class="dek">A tribute to the soldiers of Operation Vijay, and why the anniversary still matters most here in Jammu &amp; Kashmir.</p>
+        <span class="read-more">Read piece →</span>
+      </a>
+      <div class="article-card placeholder">
+        <div class="article-meta"><span class="beat-pill">Digital · Take One</span><span>Add dateline</span></div>
+        <h3>Your next headline goes here</h3>
+        <p class="dek">Swap this card for your latest digital report — a punchy headline, a one-line dek, and a link to the full piece.</p>
+        <span class="read-more">Read piece →</span>
+      </div>
+      <div class="article-card placeholder">
+        <div class="article-meta"><span class="beat-pill">Broadcast · DDK Jammu</span><span>Add dateline</span></div>
+        <h3>Your next bulletin or segment goes here</h3>
+        <p class="dek">Link out to a bulletin, segment, or anchor clip once you have a shareable link.</p>
+        <span class="read-more">Watch segment →</span>
+      </div>
+    </div>
+    <p class="articles-note">Note: the two dashed cards are placeholders — swap in a headline, dek and link each time you publish, so this section always shows your latest work.</p>
+  </div>
+</section>
+
+<section class="onair" id="onair">
+  <div class="wrap">
+    <div class="section-label">On-Air</div>
+    <h2 class="section-title">Anchor &amp; on-camera work</h2>
+    <div class="onair-grid">
+      <div>
+        <p style="color:#c9cdd3; font-size:16px; margin-bottom:16px;">I anchor and present news segments for Take One Digital Network and file broadcast-standard bulletins as an empanelled Resource Person with Doordarshan Kendra Jammu's Regional News Unit — applying the same sourcing discipline on camera that I bring to print.</p>
+        <p style="color:#c9cdd3; font-size:16px;">A running selection of aired bulletins is below — click any thumbnail to watch on YouTube.</p>
+      </div>
+      <a href="https://youtu.be/S35gCWd0j1s" target="_blank" rel="noopener" class="bulletin-card">
+        <div class="bulletin-thumb">
+          <img src="https://img.youtube.com/vi/S35gCWd0j1s/hqdefault.jpg" alt="Take One bulletin, featured segment" loading="lazy">
+          <div class="play-badge"><span>▶</span></div>
+        </div>
+        <span class="bulletin-label">Featured segment — Take One Digital Network</span>
+      </a>
+    </div>
+    <div class="bulletin-grid">
+      <a href="https://youtu.be/qhOAcQbAdMo" target="_blank" rel="noopener" class="bulletin-card">
+        <div class="bulletin-thumb"><img src="https://img.youtube.com/vi/qhOAcQbAdMo/hqdefault.jpg" alt="Take One bulletin" loading="lazy"><div class="play-badge"><span>▶</span></div></div>
+        <span class="bulletin-label">Bulletin — Take One Digital Network</span>
+      </a>
+      <a href="https://youtu.be/knxqaI1f0eQ" target="_blank" rel="noopener" class="bulletin-card">
+        <div class="bulletin-thumb"><img src="https://img.youtube.com/vi/knxqaI1f0eQ/hqdefault.jpg" alt="Take One bulletin" loading="lazy"><div class="play-badge"><span>▶</span></div></div>
+        <span class="bulletin-label">Bulletin — Take One Digital Network</span>
+      </a>
+      <a href="https://youtu.be/ukDLQ5Ryiko" target="_blank" rel="noopener" class="bulletin-card">
+        <div class="bulletin-thumb"><img src="https://img.youtube.com/vi/ukDLQ5Ryiko/hqdefault.jpg" alt="Take One bulletin" loading="lazy"><div class="play-badge"><span>▶</span></div></div>
+        <span class="bulletin-label">Bulletin — Take One Digital Network</span>
+      </a>
+      <a href="https://youtu.be/o9DyKrkNiy0" target="_blank" rel="noopener" class="bulletin-card">
+        <div class="bulletin-thumb"><img src="https://img.youtube.com/vi/o9DyKrkNiy0/hqdefault.jpg" alt="Take One bulletin" loading="lazy"><div class="play-badge"><span>▶</span></div></div>
+        <span class="bulletin-label">Bulletin — Take One Digital Network</span>
+      </a>
+      <a href="https://youtu.be/e9ZTU0QCIJ0" target="_blank" rel="noopener" class="bulletin-card">
+        <div class="bulletin-thumb"><img src="https://img.youtube.com/vi/e9ZTU0QCIJ0/hqdefault.jpg" alt="Take One bulletin" loading="lazy"><div class="play-badge"><span>▶</span></div></div>
+        <span class="bulletin-label">Bulletin — Take One Digital Network</span>
+      </a>
+      <a href="https://youtu.be/UH38n47XE_A" target="_blank" rel="noopener" class="bulletin-card">
+        <div class="bulletin-thumb"><img src="https://img.youtube.com/vi/UH38n47XE_A/hqdefault.jpg" alt="Take One bulletin" loading="lazy"><div class="play-badge"><span>▶</span></div></div>
+        <span class="bulletin-label">Bulletin — Take One Digital Network</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="experience">
+  <div class="wrap">
+    <div class="section-label">Record</div>
+    <h2 class="section-title">Experience, in order filed</h2>
+    <div class="tl-item">
+      <div class="tl-date">May 2026 — Present</div>
+      <div class="tl-role">
+        <h4>Resource Person, Casual Panel (Empanelled)</h4>
+        <span class="tl-org">Doordarshan Kendra (DDK) Jammu — Regional News Unit · Public Broadcast Media</span>
+        <p>Writing, editing and structuring news content and bulletins for on-air broadcast, verifying sources and preparing publish-ready copy under tight deadlines.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Apr 2025 — Present</div>
+      <div class="tl-role">
+        <h4>News Desk Reporter &amp; Anchor — Full Time</h4>
+        <span class="tl-org">Take One Digital Network · J&amp;K's Prominent News &amp; Media Platform</span>
+        <p>Researching, writing and editing news across digital and broadcast; anchoring segments and coordinating with reporters, officials and sources to verify and publish stories.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Apr 2024 — Apr 2025</div>
+      <div class="tl-role">
+        <h4>Proofreader &amp; Writer — Full Time</h4>
+        <span class="tl-org">Daily Excelsior · J&amp;K's Leading English Daily</span>
+        <p>Supervised and finalised daily news pages ahead of print, ensuring grammatical and stylistic consistency, and authored bylined articles on civic and national affairs.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Sep 2023 — Mar 2024</div>
+      <div class="tl-role">
+        <h4>Sales &amp; Operations Coordinator</h4>
+        <span class="tl-org">Orkan Energy Pvt Ltd · Jammu, J&amp;K</span>
+        <p>Managed sales pipeline, vendor coordination and reporting — groundwork in operational discipline now applied to newsroom data and desk management.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2022 — 2023</div>
+      <div class="tl-role">
+        <h4>Area Sales Manager</h4>
+        <span class="tl-org">Bhagwati Enterprises · Jammu, J&amp;K</span>
+        <p>Led a store operations team, building the leadership and communication skills now carried into desk and field reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="section-label">Toolkit</div>
+    <h2 class="section-title">Skills &amp; core competencies</h2>
+    <div class="skill-cloud">
+      <span class="skill-chip">News Writing &amp; Editing</span>
+      <span class="skill-chip">Sub-Editing &amp; Headlining</span>
+      <span class="skill-chip">News Anchoring</span>
+      <span class="skill-chip">Proofreading &amp; Copy Editing</span>
+      <span class="skill-chip">Bulletin Preparation</span>
+      <span class="skill-chip">Research &amp; Fact-Checking</span>
+      <span class="skill-chip">Source Verification</span>
+      <span class="skill-chip">Political &amp; Admin Beat</span>
+      <span class="skill-chip">Print &amp; Digital Publishing</span>
+      <span class="skill-chip">Broadcast-Standard Delivery</span>
+      <span class="skill-chip">MS Office &amp; Digital Tools</span>
+      <span class="skill-chip">Fast &amp; Accurate Typing</span>
+    </div>
+    <div class="lang-row">
+      <div class="lang-item"><b>English</b>Proficient</div>
+      <div class="lang-item"><b>Hindi</b>Native</div>
+      <div class="lang-item"><b>Dogri</b>Intermediate</div>
+      <div class="lang-item"><b>Urdu</b>Intermediate</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-label">Get in touch</div>
+    <h2 class="section-title">For tips, bylines &amp; bookings</h2>
+    <p class="section-sub">Have a story, a correction, or an opportunity to discuss? Reach out directly, or send a note below.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="mailto:sahilpandita2017@gmail.com">✉ sahilpandita2017@gmail.com</a>
+        <a href="tel:+917889568395">☎ +91 78895 68395</a>
+        <a href="https://www.linkedin.com/in/sahil-pandita-92b683317" target="_blank" rel="noopener">in LinkedIn — /sahil-pandita-92b683317</a>
+      </div>
+      <form class="msg-form" action="mailto:sahilpandita2017@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message, story tip, or enquiry" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <div class="brand">Sahil Pandita</div>
+    <div class="foot-links">
+      <a href="mailto:sahilpandita2017@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/sahil-pandita-92b683317" target="_blank" rel="noopener">LinkedIn</a>
+      <span>Jammu, J&amp;K, India — © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('#siteNav a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Reveal sections as they scroll into view
+  const revealTargets = document.querySelectorAll('section');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    revealTargets.forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(el => io.observe(el));
+  }
+
+  // Highlight the current section in the nav while scrolling
+  const navLinks = document.querySelectorAll('#siteNav a[href^="#"]');
+  const sections = [...navLinks].map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = document.querySelector(`#siteNav a[href="#${entry.target.id}"]`);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.style.color = '');
+          link.style.color = 'var(--tally)';
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(s => spy.observe(s));
+  }
+</script>
+</body>
+</html>
