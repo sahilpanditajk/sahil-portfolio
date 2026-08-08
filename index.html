@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sahil Pandita — Journalist, Anchor &amp; Reporter | Jammu &amp; Kashmir</title>
 <meta name="description" content="Sahil Pandita — News Desk Reporter &amp; Anchor covering politics, defense, sports and regional affairs across Jammu &amp; Kashmir. Reporting, editing, anchoring.">
-<link rel="canonical" href="https://sahilpandita.netlify.app/">
-<meta name="author" content="Sahil Pandita">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#10151c">
-<meta name="keywords" content="Sahil Pandita, Journalist, News Anchor, Reporter, Jammu, Kashmir, Digital Media, News Desk, Portfolio">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -288,6 +283,7 @@
 
   /* ---------- On-air ---------- */
   .onair{background:var(--ink-soft); border-top:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line);}
+  .photoessays{border-bottom:1px solid var(--ink-line);}
   .onair-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-top:20px;}
   .bulletin-grid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:48px;
@@ -379,31 +375,7 @@
     transition:background 0.2s, transform 0.15s;
   }
   .msg-form button:hover{background:#c8351f; transform:translateY(-2px);}
-/* ---------- Back To Top ---------- */
-#backToTop{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  width:50px;
-  height:50px;
-  border:none;
-  border-radius:50%;
-  background:var(--tally);
-  color:#fff;
-  font-size:22px;
-  cursor:pointer;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 24px rgba(0,0,0,.25);
-  transition:all .3s ease;
-  z-index:999;
-}
 
-#backToTop:hover{
-  transform:translateY(-4px);
-  background:#c8351f;
-}
   footer{
     padding:36px 0; border-top:1px solid var(--ink-line);
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
@@ -451,6 +423,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#beats">Beats</a></li>
         <li><a href="#articles">Reporting</a></li>
+        <li><a href="#photoessays">Photo Essays</a></li>
         <li><a href="#onair">On-Air</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -531,20 +504,78 @@
         <p class="dek">A tribute to the soldiers of Operation Vijay, and why the anniversary still matters most here in Jammu &amp; Kashmir.</p>
         <span class="read-more">Read piece →</span>
       </a>
-      <div class="article-card placeholder">
-        <div class="article-meta"><span class="beat-pill">Digital · Take One</span><span>Add dateline</span></div>
-        <h3>Your next headline goes here</h3>
-        <p class="dek">Swap this card for your latest digital report — a punchy headline, a one-line dek, and a link to the full piece.</p>
+      <a href="articles/kandurs-of-jammu.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Feature</span><span>Regional Affairs</span></div>
+        <h3>As modern bakeries rise, traditional kandurs keep Kashmir's culinary legacy alive in Jammu</h3>
+        <p class="dek">How neighbourhood clay-oven bakeries continue to preserve taste, tradition and memory for Kashmiri migrant families.</p>
         <span class="read-more">Read piece →</span>
-      </div>
-      <div class="article-card placeholder">
-        <div class="article-meta"><span class="beat-pill">Broadcast · DDK Jammu</span><span>Add dateline</span></div>
-        <h3>Your next bulletin or segment goes here</h3>
-        <p class="dek">Link out to a bulletin, segment, or anchor clip once you have a shareable link.</p>
-        <span class="read-more">Watch segment →</span>
-      </div>
+      </a>
+      <a href="articles/baolis-of-jammu.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Feature</span><span>Heritage</span></div>
+        <h3>Forgotten baolis of Jammu await revival as heritage fades amid urban expansion</h3>
+        <p class="dek">Jammu's historic stepwells stand neglected — and what their preservation could mean for the region.</p>
+        <span class="read-more">Read piece →</span>
+      </a>
+      <a href="articles/gujjar-bakarwal-heritage.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Feature</span><span>Regional Affairs</span></div>
+        <h3>Silent guardians of the forest: how Gujjar and Bakarwal communities preserve pastoral life</h3>
+        <p class="dek">Inside the seasonal migration and ecological knowledge that has shaped J&amp;K's Himalayan region for centuries.</p>
+        <span class="read-more">Read piece →</span>
+      </a>
+      <a href="articles/women-entrepreneurs-jammu.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Feature</span><span>Rural Economy</span></div>
+        <h3>Threads of hope: how women entrepreneurs are transforming lives through home-based businesses</h3>
+        <p class="dek">From tailoring to home bakeries, women across rural Jammu are quietly reshaping the local economy.</p>
+        <span class="read-more">Read piece →</span>
+      </a>
+      <a href="articles/newspaper-hawkers-jammu.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Feature</span><span>Human Interest</span></div>
+        <h3>Before sunrise: the lives of newspaper hawkers who wake Jammu before dawn</h3>
+        <p class="dek">A look at the unsung early-morning network that gets the day's headlines to Jammu's doorsteps.</p>
+        <span class="read-more">Read piece →</span>
+      </a>
     </div>
-    <p class="articles-note">Note: the two dashed cards are placeholders — swap in a headline, dek and link each time you publish, so this section always shows your latest work.</p>
+    <p class="articles-note">This section updates as new reporting is published — each card links to the full piece.</p>
+  </div>
+</section>
+
+<section class="photoessays" id="photoessays">
+  <div class="wrap">
+    <div class="section-label">Photo Essays</div>
+    <h2 class="section-title">Moments from the field</h2>
+    <p class="section-sub">Short, photo-led pieces — a scene, a place, a story told mostly in the image.</p>
+    <div class="article-grid">
+      <a href="articles/after-the-rain-nagrota.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Photo Essay</span><span>Nagrota, Jammu</span></div>
+        <h3>After the rain, silence finds its way</h3>
+        <p class="dek">A familiar walking track, emptied by a passing shower — and what the stillness reveals.</p>
+        <span class="read-more">View piece →</span>
+      </a>
+      <a href="articles/sunset-expressway-skyline.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Photo Essay</span><span>Suicide Point, Jammu</span></div>
+        <h3>Where the sunset meets the skyline of tomorrow</h3>
+        <p class="dek">The Delhi–Amritsar–Katra Expressway rises above the valley, framed in the colours of dusk.</p>
+        <span class="read-more">View piece →</span>
+      </a>
+      <a href="articles/vasuki-nag-temple.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Photo Essay</span><span>Bhaderwah, Doda</span></div>
+        <h3>Where legends live on: the timeless legacy of Vasuki Nag Temple</h3>
+        <p class="dek">Inside the centuries-old shrine at the heart of Bhaderwah's Naagon Ki Bhoomi.</p>
+        <span class="read-more">View piece →</span>
+      </a>
+      <a href="articles/venus-jupiter-conjunction.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Photo Essay</span><span>Night Sky, Jammu</span></div>
+        <h3>When Venus met Jupiter: a rare celestial conjunction over Jammu</h3>
+        <p class="dek">Two of the brightest planets in the night sky, captured just 1.6 degrees apart in June 2026.</p>
+        <span class="read-more">View piece →</span>
+      </a>
+      <a href="articles/jai-valley-bhaderwah.html" class="article-card">
+        <div class="article-meta"><span class="beat-pill">Photo Essay</span><span>Bhaderwah, Doda</span></div>
+        <h3>Jai Valley: where spring paints the mountains green</h3>
+        <p class="dek">Jammu &amp; Kashmir's "Mini Kashmir" in April bloom — and a landscape quietly adapting to a changing climate.</p>
+        <span class="read-more">View piece →</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -688,9 +719,7 @@
     </div>
   </div>
 </section>
-<button id="backToTop" aria-label="Back to top">
-  ↑
-</button>
+
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
     <div class="brand">Sahil Pandita</div>

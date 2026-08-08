@@ -49,6 +49,16 @@ h1{font-family:var(--serif); font-weight:600; font-size:clamp(30px,5vw,46px); li
   padding:10px; max-width:68ch; margin-top:-24px; margin-bottom:28px;
 }
 .article-body .lede-para{font-family:var(--serif); font-style:italic; font-size:18px; color:var(--gold); border-left:2px solid var(--gold); padding-left:16px;}
+.hero-image{width:100%; border-radius:4px; overflow:hidden; margin-bottom:10px; border:1px solid var(--ink-line);}
+.hero-image img{width:100%; display:block; object-fit:cover; max-height:520px;}
+.hero-caption{font-family:var(--mono); font-size:12px; color:var(--text-light-dim); margin-top:0; margin-bottom:36px;}
+.photo-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:10px; border-radius:4px; overflow:hidden;}
+.photo-grid img{width:100%; height:100%; object-fit:cover; display:block; max-height:320px;}
+.editor-note{
+  font-family:var(--mono); font-size:12.5px; color:var(--gold);
+  border:1px dashed var(--ink-line); padding:14px 16px; border-radius:3px;
+  margin-bottom:30px; line-height:1.6;
+}
 .article-footer{margin-top:40px; padding-top:24px; border-top:1px solid var(--ink-line);}
 .tl-org{font-family:var(--mono); font-size:12px; color:var(--text-light-dim);}
 
