@@ -73,3 +73,70 @@ footer .brand{font-size:16px;}
   nav ul{gap:16px;}
   .article-page{padding:48px 20px 70px;}
 }
+/* ---------- Related Articles ---------- */
+.related-articles {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--paper-line);
+}
+
+.related-articles h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-dark);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  background: var(--paper);
+  color: var(--text-dark);
+  border: 1px solid var(--paper-line);
+  border-radius: 3px;
+  text-decoration: none;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.related-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.related-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tally);
+}
+
+.related-card h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.related-link {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--tally);
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
